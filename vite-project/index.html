@@ -1,13 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div class="container">
+      <form id="form" action="/submit" method="post">
+        <h1 class="form__title">Contact us</h1>
+        <div class="form__group">
+          <label class="form__group-label" for="firstName">First Name</label>
+          <input
+            class="form__group-input"
+            type="text"
+            id="firstName"
+            name="firstName"
+          />
+        </div>
+        <div class="form__group">
+          <label class="form__group-label" for="lastName">Last Name</label>
+          <input
+            class="form__group-input"
+            type="text"
+            id="lastName"
+            name="lastName"
+          />
+        </div>
+        <div class="form__group">
+          <label class="form__group-label" for="email">Email Address</label>
+          <input
+            class="form__group-input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="email@example.com"
+          />
+        </div>
+        <div class="form__group">
+          <label class="form__group-label" for="query">Query Type</label>
+          <div class="form__group-radio">
+            <div class="radio-input">
+              <label for="option1" class="form__group-label"
+                ><input
+                  type="radio"
+                  id="option1"
+                  name="options"
+                  value="option1"
+                  class="form__group-input"
+                />
+                General Enquiry</label
+              >
+            </div>
+            <div class="radio-input">
+              <label for="option2" class="form__group-label"
+                ><input
+                  type="radio"
+                  id="option2"
+                  name="options"
+                  value="option2"
+                  class="form__group-input"
+                />
+                Support Request</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="form__group">
+          <label for="message" class="form__group-label">Message</label>
+          <textarea
+            class="non-resizable-textarea"
+            rows="15"
+            cols="50"
+          ></textarea>
+        </div>
+        <div class="form__check">
+          <input type="checkbox" name="policy" id="policy" />
+          <label for="policy" class="form__group-label"
+            >I consent to being contacted by the team</label
+          >
+        </div>
+        <button class="form__btn" type="submit">Submit</button>
+      </form>
+    </div>
   </body>
 </html>
